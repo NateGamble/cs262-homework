@@ -2,6 +2,7 @@ package neg6.cs262.calvin.edu.homework1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -33,8 +34,16 @@ public class MainActivity extends AppCompatActivity {
         Result = (TextView) findViewById(R.id.text_result);
         op_spinner = (Spinner) findViewById(R.id.op_spinner);
         //gets the integer values of both text boxes
-        Integer num1 = Integer.parseInt(Val1.getText().toString());
-        Integer num2 = Integer.parseInt(Val2.getText().toString());
+        Integer num1;
+        Integer num2;
+        try {   //Make sure something is entered in the text boxes
+            num1 = Integer.parseInt(Val1.getText().toString());
+            num2 = Integer.parseInt(Val2.getText().toString());
+        } catch (NumberFormatException e) {
+            //Do nothing if either text box is empty
+            return;
+        }
+        //Get the operator from the spinner
         String operator = op_spinner.getSelectedItem().toString();
         Integer result = 0;
         switch (operator) {
