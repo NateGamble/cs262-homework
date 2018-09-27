@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_val_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/space_btwn_boxes"
+        android:layout_marginBottom="@dimen/space_btwn_boxes"
+        android:text="@string/text_val_1" />
+
+    <TextView
+        android:id="@+id/text_val_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_val_1"
+        android:layout_marginTop="@dimen/space_btwn_boxes"
+        android:layout_marginRight="@dimen/space_btwn_boxes"
+        android:layout_marginBottom="@dimen/space_btwn_boxes"
+        android:text="@string/text_val_2" />
+
+    <TextView
+        android:id="@+id/text_op"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_val_2"
+        android:layout_marginTop="@dimen/space_btwn_boxes"
+        android:layout_marginRight="@dimen/space_btwn_boxes"
+        android:layout_marginBottom="@dimen/space_btwn_boxes"
+        android:text="@string/text_op" />
+
+    <EditText
+        android:id="@+id/editText_val_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/text_val_1"
+        android:ems="10"
+        android:inputType="numberSigned"/>
+    <EditText
+        android:id="@+id/editText_val_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text_val_2"
+        android:layout_below="@id/editText_val_1"
+        android:ems="10"
+        android:inputType="numberSigned"/>
+
+
+</RelativeLayout>

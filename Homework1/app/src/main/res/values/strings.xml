@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Homework1</string>
+    <string name="text_val_1">Value 1:</string>
+    <string name="text_val_2">Value 2:</string>
+    <string name="text_op">Operator:</string>
+</resources>
