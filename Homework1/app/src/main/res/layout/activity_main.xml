@@ -40,7 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/text_val_1"
         android:ems="10"
-        android:inputType="numberSigned"/>
+        android:inputType="numberSigned"
+        android:hint="@string/edit_text_hint"/>
     <EditText
         android:id="@+id/editText_val_2"
         android:layout_width="wrap_content"
@@ -48,13 +49,27 @@
         android:layout_toRightOf="@id/text_val_2"
         android:layout_below="@id/editText_val_1"
         android:ems="10"
-        android:inputType="numberSigned"/>
+        android:inputType="numberSigned"
+        android:hint="@string/edit_text_hint"/>
 
     <Spinner
         android:id="@+id/op_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_op"/>
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calc_button_text"
+        android:onClick="Calculate"
+        android:layout_below="@+id/op_spinner"/>
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/op_spinner"
+        android:layout_toRightOf="@+id/calculate_button"/>
 
 
 </RelativeLayout>
