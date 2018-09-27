@@ -3,4 +3,10 @@
     <string name="text_val_1">Value 1:</string>
     <string name="text_val_2">Value 2:</string>
     <string name="text_op">Operator:</string>
+    <string-array name="operations_array">
+        <item>+</item>
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+    </string-array>
 </resources>
