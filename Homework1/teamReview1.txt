@@ -1,0 +1,9 @@
+The vision statement for team DragonsBreath is well thought out and fleshed out well.
+One question I have for the team after reading the vision statement is do you plan
+to incorporate your app with Calvin's quest orientation? Or is the hope for this app
+to be its own separate entity? The idea that you have is interesting and I think it
+could be a fun event for freshmen to do with their friends/floor.
+
+Team DragonsBreath does have some prototype code, but it's not much of a prototype. There's 
+not much to base their application on. It looks like they haven't spent much time on making
+a prototype of their app yet.
