@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
         PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
         PreferenceManager.setDefaultValues(this, R.xml.pref_notification, false);
         PreferenceManager.setDefaultValues(this, R.xml.pref_data_sync, false);
