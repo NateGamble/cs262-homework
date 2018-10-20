@@ -14,23 +14,24 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<String>{
 
     private EditText mBookInput;
-    private TextView mAuthorText;
-    private TextView mTitleText;
+    private TextView mEmailText;
+    private TextView mIdText;
+    private TextView mNameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mBookInput = (EditText) findViewById(R.id.bookInput);
-        mAuthorText = (TextView) findViewById(R.id.authorText);
-        mTitleText = (TextView) findViewById(R.id.titleText);
+        mEmailText = (TextView) findViewById(R.id.authorText);
+        mIdText = (TextView) findViewById(R.id.titleText);
+        mNameText = (TextView) findViewById(R.id.nameText);
         if(getSupportLoaderManager().getLoader(0)!=null){
             getSupportLoaderManager().initLoader(0,null,this);
         }
@@ -49,21 +50,24 @@ public class MainActivity extends AppCompatActivity
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
         if (networkInfo != null && networkInfo.isConnected() && queryString.length()!=0) {
-//            new FetchBook(mTitleText, mAuthorText).execute(queryString);
+//            new FetchBook(mIdText, mEmailText).execute(queryString);
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
             getSupportLoaderManager().restartLoader(0, queryBundle,this);
-            mAuthorText.setText("");
-            mTitleText.setText(R.string.loading);
+            mEmailText.setText("");
+            mNameText.setText("");
+            mIdText.setText(R.string.loading);
         }
 
         else {
             if (queryString.length() == 0) {
-                mAuthorText.setText("");
-                mTitleText.setText(R.string.empty_query);
+                mEmailText.setText("");
+                mNameText.setText("");
+                mIdText.setText(R.string.empty_query);
             } else {
-                mAuthorText.setText("");
-                mTitleText.setText(R.string.no_network_connection);
+                mEmailText.setText("");
+                mNameText.setText("");
+                mIdText.setText(R.string.no_network_connection);
             }
         }
     }
@@ -78,35 +82,42 @@ public class MainActivity extends AppCompatActivity
     public void onLoadFinished(@NonNull Loader<String> loader, String s) {
         try {
             JSONObject jsonObject = new JSONObject(s);
-            JSONArray itemsArray = jsonObject.getJSONArray("items");
+//            JSONArray itemsArray = jsonObject.names();
 
             //Iterate through the results
-            for(int i = 0; i<itemsArray.length(); i++){
-                JSONObject book = itemsArray.getJSONObject(i); //Get the current item
-                String title=null;
-                String authors=null;
-                JSONObject volumeInfo = book.getJSONObject("volumeInfo");
+//            for(int i = 0; i<itemsArray.length(); i++){
+            JSONObject book = jsonObject; //Get the current item
+            String id=null;
+            String email=null;
+            String name = null;
 
-                try {
-                    title = volumeInfo.getString("title");
-                    authors = volumeInfo.getString("authors");
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-
-                //If both a title and author exist, update the TextViews and return
-                if (title != null && authors != null){
-                    mTitleText.setText(title);
-                    mAuthorText.setText(authors);
-                    return;
-                }
+            try {
+                id = book.getString("id");
+                email = book.getString("emailAddress");
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+            try {
+                name = book.getString("name");
+            }
+            catch (Exception e) {
+                name = "no name";
+            }
+            //If both a id and email exist, update the TextViews and return
+            if (id != null && email != null){
+                mIdText.setText("id: " + id);
+                mEmailText.setText("email: " + email);
+                mNameText.setText("name: " + name);
+                return;
             }
 
-            mTitleText.setText("No Results Found");
-            mAuthorText.setText("");
+            mIdText.setText("No Results Found");
+            mEmailText.setText("");
+            mNameText.setText("");
         } catch (Exception e) {
-            mTitleText.setText("No Results Found");
-            mAuthorText.setText("");
+            mIdText.setText("No Results Found");
+            mEmailText.setText("");
+            mNameText.setText("");
             e.printStackTrace();
         }
     }
