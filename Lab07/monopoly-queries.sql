@@ -13,7 +13,7 @@ SELECT *
   ;
 
 SELECT *
-  FROM PlayerProperty
+  FROM PlayerPropertyGame
   ;
 
 -- Get all the users with Calvin email addresses.
@@ -31,7 +31,7 @@ ORDER BY score DESC
 
 -- Get the cross-product of all the tables.
 SELECT *
-  FROM Player, PlayerGame, Game, Property, PlayerProperty
+  FROM Player, PlayerGame, Game, Property, PlayerPropertyGame
   ;
 
 
