@@ -1,0 +1,4 @@
+a. Their trello board doesn't quite show the amount of activity I was expecting. It shows 31.25 hours spent over this last sprint, which seems a little bit low, but okay.
+b. Their user stories seem good. There is one user story that is a bit long, but the rest seem at a good length. Their class diagram looks good as well, specifying Locations, Games and Teams as classes. Each of those classes look well fleshed out. Their UI model looks good, very similar to the demo shown today. The model is basic and focuses on the important parts of the app.
+c. There has been an appropriate amount of code pushed to their client repo. I can run the prototype and it makes sense.
+d. Yes. No.
