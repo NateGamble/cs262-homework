@@ -1,0 +1,6 @@
+Nate Gamble
+Reviewing Team B (Operation Broken Waterfall)
+a. For the most part. Their Trello board only seems to have about 11 hours a week for the past sprint which seems a bit low.
+b. Their models look well-formulated. They are plain and simple, which makes it easy to understand. Their ui model is very well made.
+c. There has been an appropriate amount of code pushed to their client repo. There has only been one file pushed to their server repo, but it looks like that is the majority of what they will need for their database.
+d. Their design presentation was effective. They answered questions well and were accepting of new ideas given. I think their presentation was around the middle. It wasn't as good as Group C's, but effective nonetheless.

@@ -1,0 +1,4 @@
+a. The service is restful because it is stateless.
+b. The main page will implement actions that are nullipotent, while the table pages (user, ride, passenger) will implement both actions that are idempotent and nullipotent
+c. Since we are coding in java, there is an impedance mismatch between our code and the server database
+d. Probably not.
