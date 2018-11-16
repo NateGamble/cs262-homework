@@ -1,4 +1,4 @@
-package neg6.cs262.calvin.edu.lab05;
+package neg6.cs262.calvin.edu.homework2;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

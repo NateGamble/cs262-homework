@@ -1,10 +1,8 @@
 package neg6.cs262.calvin.edu.homework2;
 
-import android.net.Uri;
 import android.util.Log;
 
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -42,7 +40,6 @@ public class NetworkUtils {
             } else {
                 requestURL = new URL(baseURL + "s");
             }
-
 
 
             //make URL request

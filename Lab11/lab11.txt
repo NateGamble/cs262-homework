@@ -1,0 +1,15 @@
+Homework1 Updates:
+-deleted unused import (android.util.Log)
+-deleted redundant class castings (spinner, edit text, text view)
+-ignored misspellings/abbreviations of between
+-deleted namespace declaration not used in activity_main.xml (xmlns:app="http://schemas.android.com/apk/res-auto)
+
+Homework2 Updates:
+-ignored reduntant local variables jsonObject and book, as those are part of the first section of Homework2.
+-deleted unused imports in NetworkUtils.java (android.net.Uri and java.io.Console)
+-deleted reduntant class castings in MainActivity.java (edit text and text view)
+-ignored typos "Dogbreath" and "trello"
+-deleted namespace declaration not used in activity_main.xml (xmlns:app="http://schemas.android.com/apk/res-auto)
+
+Homework3 Updates:
+None needed
