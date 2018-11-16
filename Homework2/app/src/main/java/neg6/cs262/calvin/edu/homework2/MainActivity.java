@@ -17,7 +17,7 @@ import android.widget.TextView;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity
-        implements LoaderManager.LoaderCallbacks<String>{
+        implements LoaderManager.LoaderCallbacks<String> {
 
     private EditText mBookInput;
     private TextView mEmailText;
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mBookInput = (EditText) findViewById(R.id.bookInput);
-        mEmailText = (TextView) findViewById(R.id.authorText);
-        mIdText = (TextView) findViewById(R.id.titleText);
-        mNameText = (TextView) findViewById(R.id.nameText);
-        if(getSupportLoaderManager().getLoader(0)!=null){
-            getSupportLoaderManager().initLoader(0,null,this);
+        mBookInput = findViewById(R.id.bookInput);
+        mEmailText = findViewById(R.id.authorText);
+        mIdText = findViewById(R.id.titleText);
+        mNameText = findViewById(R.id.nameText);
+        if (getSupportLoaderManager().getLoader(0) != null) {
+            getSupportLoaderManager().initLoader(0, null, this);
         }
     }
 
@@ -49,17 +49,15 @@ public class MainActivity extends AppCompatActivity
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-        if (networkInfo != null && networkInfo.isConnected() && queryString.length()!=0) {
+        if (networkInfo != null && networkInfo.isConnected() && queryString.length() != 0) {
 //            new FetchBook(mIdText, mEmailText).execute(queryString);
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
-            getSupportLoaderManager().restartLoader(0, queryBundle,this);
+            getSupportLoaderManager().restartLoader(0, queryBundle, this);
             mEmailText.setText("");
             mNameText.setText("");
             mIdText.setText(R.string.loading);
-        }
-
-        else {
+        } else {
             if (queryString.length() == 0) {
                 mEmailText.setText("");
                 mNameText.setText("");
@@ -87,24 +85,23 @@ public class MainActivity extends AppCompatActivity
             //Iterate through the results
 //            for(int i = 0; i<itemsArray.length(); i++){
             JSONObject book = jsonObject; //Get the current item
-            String id=null;
-            String email=null;
+            String id = null;
+            String email = null;
             String name = null;
 
             try {
                 id = book.getString("id");
                 email = book.getString("emailAddress");
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             try {
                 name = book.getString("name");
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 name = "no name";
             }
             //If both a id and email exist, update the TextViews and return
-            if (id != null && email != null){
+            if (id != null && email != null) {
                 mIdText.setText("id: " + id);
                 mEmailText.setText("email: " + email);
                 mNameText.setText("name: " + name);

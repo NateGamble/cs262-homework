@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="monopoly:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="monopoly-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="monopoly:war exploded" />
+    </root>
+  </artifact>
+</component>
