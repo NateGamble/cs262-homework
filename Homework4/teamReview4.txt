@@ -1,0 +1,4 @@
+Nate Gamble
+Reviewing Team B (Operation Broken Waterfall)
+User Test:
+Their user test was well planned and mostly well excecuted. It was clear and simple. The only issue I had was that they had to reschedule my user testing time because someone on their team flaked. There was a good amount of system functionality to test. There has been a good amount of code pushed to their repos lately.
